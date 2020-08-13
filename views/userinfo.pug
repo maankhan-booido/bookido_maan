@@ -1,0 +1,124 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title User Info
+  // favicon
+  link(rel='icon' href='images/PP.png' type='image/png' sizes='48 X 48')
+  // favicon
+  // Bootstrap core CSS
+  link(href='vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  style.
+    #wrapper {
+    overflow-x: hidden;
+    }
+    #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    }
+    #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    }
+    #sidebar-wrapper .list-group {
+    width: 15rem;
+    }
+    #page-content-wrapper {
+    min-width: 100vw;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+    }
+    @media (min-width: 768px) {
+    #sidebar-wrapper {
+    margin-left: 0;
+    }
+    #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+    }
+    }
+#wrapper.d-flex
+  // Sidebar
+  #sidebar-wrapper.bg-light.border-right
+    .sidebar-heading 
+      img(src="images/my1.png", alt="Bookidologo" height="70px") 
+    .list-group.list-group-flush
+      a.list-group-item.list-group-item-action.bg-light(href='/upload') Upload Book
+      a.list-group-item.list-group-item-action.bg-light(href='/available') Available Books
+      a.list-group-item.list-group-item-action.bg-light(href='/userinfo') User Info
+      a.list-group-item.list-group-item-action.bg-light(href='/comment') Comment Section
+      //- a.list-group-item.list-group-item-action.bg-light(href='#') Events
+      //- a.list-group-item.list-group-item-action.bg-light(href='#') Profile
+      a.list-group-item.list-group-item-action.bg-light(href='/') Log Out
+  // /#sidebar-wrapper
+  // Page Content
+  #page-content-wrapper.ml-5
+    //start here
+ 
+    .container-fluid
+      //- h1.mt-4 Hello, Menahil 
+      br
+      br
+      br
+      h2.display-4=title
+      
+      table.table.table-hover
+        thead
+          tr
+            th(scope='col') User Name
+            th(scope='col') Email
+            th(scope='col') Password
+            th(scope='col') Suspend Account
+        tbody
+            each userinfo in user
+                tr
+                    td=userinfo.name
+                    td=userinfo.email
+                    td=userinfo.password        
+                    td
+                        a.fa.fa-trash(style='font-size:36px;color:#FFC34C' href='/user/delete/'+userinfo._id)
+        
+  // /#page-content-wrapper
+// /#wrapper
+// Bootstrap core JavaScript
+script(src='../../vendor/jquery/jquery.min.js')
+script(src='../../vendor/bootstrap/js/bootstrap.bundle.min.js')
+// Menu Toggle Script
+script.
+  $("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+  });
+
+//- block content
+//-     .row
+//-         .col-sm-8
+//-             h1=title
+//-         .col-sm-4
+//-             //- a(href="/products/add", class="btn btn-success float-right") Add New Product
+//-     table.table
+//-         thead
+//-             tr
+//-                 th Name
+//-                 th Email
+//-                 th Password
+//-         tbody
+//-             each userinfo in user
+//-                 tr
+//-                     td=userinfo.id                
+//-                     td=userinfo.name
+//-                     td=userinfo.email
+//-                     td=userinfo.password
+
+//-                     //-     a(href="/products/edit/"+product._id, class="btn btn-warning") Edit

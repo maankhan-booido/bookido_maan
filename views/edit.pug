@@ -1,0 +1,106 @@
+doctype html
+head
+  title Edit
+  // favicon
+  link(rel='icon' href='images/PP.png' type='image/png' sizes='48 X 48')
+  // favicon
+  // font-awesome and others
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  // font-awesome end
+  // google fonts
+  link(href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet')
+  // google fonts
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+
+
+   style.
+    #wrapper {
+    overflow-x: hidden;
+    }
+    #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    }
+    #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    }
+    #sidebar-wrapper .list-group {
+    width: 15rem;
+    }
+    #page-content-wrapper {
+    min-width: 100vw;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+    }
+    @media (min-width: 768px) {
+    #sidebar-wrapper {
+    margin-left: 0;
+    }
+    #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+    }
+    }
+#wrapper.d-flex
+  // Sidebar
+  #sidebar-wrapper.bg-light.border-right
+    //- .sidebar-heading 
+    //-   img(src="images/my1.png", alt="Bookidologo" height="70px") 
+    //- .list-group.list-group-flush
+    //-   a.list-group-item.list-group-item-action.bg-light(href='/upload') Upload Book
+    //-   a.list-group-item.list-group-item-action.bg-light(href='/available') Available Books
+    //-   a.list-group-item.list-group-item-action.bg-light(href='/userinfo') User Info
+    //-   a.list-group-item.list-group-item-action.bg-light(href='/comment') Comment Section
+    //-   a.list-group-item.list-group-item-action.bg-light(href='#') Log Out
+
+  // /#sidebar-wrapper
+  // Page Content
+  #page-content-wrapper.ml-5.mr-5
+    .container-fluid
+      h2.mt-4  Edit Information
+    .container-fluid
+      form(method='POST' action='/edit/'+edit_book._id )
+        .form-row
+          .form-group.col-md-5
+            label(for='inputEmail4') Book Name
+            input#bookname.form-control(name='bookname' type='text' placeholder='Enter Book Name' required='' value=edit_book.bookname )
+          .form-group.col-md-5
+            label(for='inputPassword4') Author Name
+            input#authorname.form-control(name='authorname' type='text' placeholder='Enter Author Name' required='' value=edit_book.authorname)
+        .form-row
+          .form-group.col-md-10
+            label(for='inputState') Department
+            select#inputState.form-control(name='depname' required='' value=edit_book.depname )
+              option Computer Engineering
+        .form-row
+          .form-group.col-md-10
+            label(for='exampleFormControlFile1') Book URL
+            input#exampleFormControlFile1.form-control-file(name='book' type='URL' value=edit_book.book_newurl)
+
+          
+
+        button.btn.btn-primary(type='submit' onclick='validate()') Upload
+    //
+      <label for="inputAddress">Select Book pdf</label>
+      <input type="file" class="form-control" id="bookpdf" placeholder="Select a Book" style="float: right;">
+// /#page-content-wrapper
+// /#wrapper
+// Bootstrap core JavaScript
+script(src='vendor/jquery/jquery.min.js')
+script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+
+  

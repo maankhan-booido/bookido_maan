@@ -1,0 +1,252 @@
+//- extends layout
+
+//- block content
+//-   h1=title
+//-   p Welcome to #{title}
+//------------------------------
+doctype html
+head
+  title Bookido|CUI Lahore
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  // favicon
+  link(rel='icon' href='images/PP.png' type='image/png' sizes='48 X 48')
+  // favicon
+  // font-awesome and others
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  // font-awesome end
+  // google fonts
+  link(href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet')
+  // google fonts
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
+  // Bootstrap end
+  style(type='text/css').
+    /*for navbar and header*/
+    .header{
+    background: url("https://images.squarespace-cdn.com/content/v1/56a84fd8bfe873f5795817a8/1520313362889-PRHZNZKQ2TTVFQ23PRNJ/ke17ZwdGBToddI8pDm48kFWxnDtCdRm2WA9rXcwtIYR7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UcTSrQkGwCGRqSxozz07hWZrYGYYH8sg4qn8Lpf9k1pYMHPsat2_S1jaQY3SwdyaXg/2017-0417_Lightbox%E7%A9%BA%E9%96%93%E7%85%A7-4.jpg?format=2500w") center center fixed;
+    color: #FFF;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -msn-background-size: cover;
+    }
+    .header .overlay{
+    background: rgba(0, 0, 0, 0.58);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+    .header .navbar-default {
+    background-color:transparent !important;
+    border-color:transparent;
+    background-image:none;
+    box-shadow:none;
+    }
+    .header .navbar-default {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFF;
+    }
+    .header .navbar-default .navbar-nav>li>a {
+    font-size:20px;
+    color:#fff;
+    border-bottom: 1px solid transparent;
+    text-align: right;
+    padding: 25px;
+    }
+    .header .navbar-default .navbar-nav>li:hover a{
+    color: #FFC34C;
+    border-bottom: 2px solid #FFC34C;
+    }
+    .header .navbar-toggle {
+    margin:5px 0;
+    background:#fff;
+    color:#FFC34C;
+    }
+    /*for navbar and header end*/
+    /* .navbar-nav .parent{
+    position: absolute;  idk why but this makes the alignment of navbar links exactly how i want them to be xo
+    } */
+    .child{
+    position: relative;
+    bottom: 2vw;
+    }
+    .activelink{
+    text-decoration: none;
+    border-bottom: 2px solid;
+    color: #FFC34C;
+    }
+    .eyecatch{
+    font-family: 'Amatic SC';
+    font-size:5vw;
+    letter-spacing: 8px;
+    }
+    .sub{
+    font-size: 3vw;
+    }
+    .mycontainer{
+    margin-top: 10%;
+    }
+    .zoom:hover  {
+    transform: scale(1.1);
+    transition: 1s;
+    box-shadow: 1px;
+    /*color: black;*/
+    opacity: 1;
+    background-color: none;
+    width: 90%;
+    }
+    /* for modal buttons */
+    .modal-btnsignup{
+    background-color: #FFC34C;
+    color: #FFF;
+    }
+    .modal-btnlogin{
+    background-color: #77D5D5;
+    color: #FFF;
+    }
+// navbar and header starts
+section.header
+  .overlay
+    .cont
+      // <img class="logo child  ml-4 pt-2" src="images/my1.png" height="90px"style="display:inline-block">
+      nav.navbar.navbar-default.navbar-expand-md
+        img.logo.child.mt-4.pt-2(src='images/my1.png' height='90px')
+        button.navbar-toggler.navbar-toggle(type='button' data-toggle='collapse' data-target='#navcontent' aria-controls='navcontent' aria-expanded='false' aria-label='Toggle navigation')
+          i.fa.fa-bars.fa-2x
+        // Collect the nav links, forms, and other content for toggling
+        #navcontent.collapse.navbar-collapse.justify-content-end
+          ul.nav.navbar-nav.nav-links
+            li.nav-item
+              a.nav-link(href='#') Home
+            li.nav-item
+              a.nav-link(href='/signin') Sign In
+            li.nav-item
+              a.nav-link(href='/signup') Sign Up
+            li.nav-item
+              a.nav-link(href='/adminlogin') Admin
+      .container.mycontainer.p-5.border
+        .row
+          h1.eyecatch.display-1 WE&apos;RE IN THE BUSINESS OF HELPING YOU
+          h2.sub The All Rounder Study Platform
+    // cont
+  // overlay ends
+// header ends
+// navbar and header ends
+// library starts
+.container.p-5
+  // 1st row of the dashboard  starts
+  .row.py-4
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='EE.html')
+        img.d-block.w-100.background-image.shadow(src='images/ee.jpg' alt='First slide' height='150' width='100')
+      h3.text Electrical Engineering
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='CE.html')
+        img.d-block.w-100.background-image.shadow(src='images/CE.jpg' alt='First slide' height='150' width='100')
+      h3.text Computer Engineering
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='SE.html')
+        img.d-block.w-100.background-image.shadow(src='images/SE.jpg' alt='First slide' height='150' width='100')
+      h3.text Software Engineering
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='Chemical.html')
+        img.d-block.w-100.background-image.shadow(src='images/che.jpg' alt='First slide' height='150' width='100')
+      h3.text  Chemical Engineering
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='CS.html')
+        img.d-block.w-100.background-image.shadow(src='images/CS.jpg' alt='First slide' height='150' width='100')
+      h3.text Computer Science
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='Mass.html')
+        img.d-block.w-100.background-image.shadow(src='images/mass.jpg' alt='First slide' height='150' width='100')
+      h3.text Mass Communication
+  // 1st row of the dashboard  ends
+  // 2nd row of the dashboard  starts
+  .row.py-4
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='pharmacy.html')
+        img.d-block.w-100.background-image.shadow(src='images/pharmacy.png' alt='First slide' height='150' width='100')
+      h3.text Pharmacy
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='Stat.html')
+        img.d-block.w-100.background-image.shadow(src='images/statistics.jpg' alt='First slide' height='150' width='100')
+      h3.text Statistics
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='psychology.html')
+        img.d-block.w-100.background-image.shadow(src='images/psychology.png' alt='First slide' height='150' width='100')
+      h3.text Psychology
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='eco.html')
+        img.d-block.w-100.background-image.shadow(src='images/economics.jpg' alt='First slide' height='150' width='100')
+      h3.text Economics
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='accounting.html')
+        img.d-block.w-100.background-image.shadow(src='images/accounting1.jpg' alt='First slide' height='150' width='100')
+      h3.text Accounting &amp; Finance
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='phy.html')
+        img.d-block.w-100.background-image.shadow(src='images/physics1.jpg' alt='First slide' height='150' width='100')
+      h3.text Physics
+  // 2nd row of the dashboard  ends
+  // 3rd row of the dashboard  starts
+  .row.py-4
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='design.html')
+        img.d-block.w-100.background-image.shadow(src='images/design2.jpg' alt='First slide' height='150' width='100')
+      h3.text Designing
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='maths.html')
+        img.d-block.w-100.background-image.shadow(src='images/maths.jpg' alt='First slide' height='150' width='100')
+      h3.text Mathematics
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='idesign.html')
+        img.d-block.w-100.background-image.shadow(src='images/interior.jpg' alt='First slide' height='150' width='100')
+      h3.text Interior Design
+    .col-6.col-md-4.col-lg-2.box.zoom
+      a(data-toggle='modal' data-target='#ModalCenter' href='arch.html')
+        img.d-block.w-100.background-image.shadow(src='images/arch1.jpg' alt='First slide' height='150' width='100')
+      h3.text Architecture
+      h1#h1
+  // library ends
+  // For bootstrap !SEQUENCE ON LINKS & PASTING BEFORE </body> IS IMPOTRTANT!
+  // jQuery first, then Tether, then Bootstrap JS.
+  //- script.
+  //-   document.getElementById("h1").innerhtml="TATAAAAA";
+  // Modal
+  #ModalCenter.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
+          h5#exampleModalLongTitle.modal-title Hello there!
+          button.close(type='button' data-dismiss='modal' aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+          | Sorry to interrupt but we need you to login before you start.
+          | If you don&apos;t have an account then
+          | feel free to sign up right here :)
+        .modal-footer
+          // <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          button#btn_login.btn.modal-btnlogin(type='button'  ) Login
+          button#btn_signup.btn.modal-btnsignup(type='button'  ) Sign up
+// for modal login button
+script(type='text/javascript').
+  document.getElementById("btn_login").onclick = function () {
+  location.href = "/signin";
+  };
+// for modal signup button
+script(type='text/javascript').
+  document.getElementById("btn_signup").onclick = function () {
+  location.href = "/signup";
+  };
+

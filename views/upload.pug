@@ -1,0 +1,110 @@
+doctype html
+head
+  // favicon
+  link(rel='icon' href='images/PP.png' type='image/png' sizes='48 X 48')
+  // favicon
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description' content='')
+  meta(name='author' content='')
+  title New Book
+  // Bootstrap core CSS
+  link(href='vendor/bootstrap/css/bootstrap.min.css' rel='stylesheet')
+  // Custom styles for this template
+  link(href='css/simple-sidebar.css' rel='stylesheet')
+  style.
+    #wrapper {
+    overflow-x: hidden;
+    }
+    #sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    -webkit-transition: margin .25s ease-out;
+    -moz-transition: margin .25s ease-out;
+    -o-transition: margin .25s ease-out;
+    transition: margin .25s ease-out;
+    }
+    #sidebar-wrapper .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    }
+    #sidebar-wrapper .list-group {
+    width: 15rem;
+    }
+    #page-content-wrapper {
+    min-width: 100vw;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: 0;
+    }
+    @media (min-width: 768px) {
+    #sidebar-wrapper {
+    margin-left: 0;
+    }
+    #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+    }
+    }
+#wrapper.d-flex
+  // Sidebar
+  #sidebar-wrapper.bg-light.border-right
+    .sidebar-heading 
+      img(src="images/my1.png", alt="Bookidologo" height="70px") 
+    .list-group.list-group-flush
+      a.list-group-item.list-group-item-action.bg-light(href='/upload') Upload Book
+      a.list-group-item.list-group-item-action.bg-light(href='/available') Available Books
+      a.list-group-item.list-group-item-action.bg-light(href='/userinfo') User Info
+      a.list-group-item.list-group-item-action.bg-light(href='/comment') Comment Section
+      a.list-group-item.list-group-item-action.bg-light(href='/') Log Out
+  // /#sidebar-wrapper
+  // Page Content
+  #page-content-wrapper.ml-5
+    .container-fluid
+      br
+      br
+      h2.display-4.mt-4  Upload New Content
+    //
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+      <button class="btn btn-primary" id="menu-toggle">Toggle Menu</button>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      </nav>
+    .container-fluid
+      form(method='POST' action='/upload')
+        .form-row
+          .form-group.col-md-5
+            label(for='inputEmail4') Book Name
+            input#bookname.form-control(name='bookname' type='text' placeholder='Enter Book Name' required='' )
+          .form-group.col-md-5
+            label(for='inputPassword4') Author Name
+            input#authorname.form-control(name='authorname' type='text' placeholder='Enter Author Name' required='')
+        .form-row
+          .form-group.col-md-10
+            label(for='inputState') Department
+            select#inputState.form-control(name='depname' required='')            
+              option Software Engineering
+        .form-row      
+          .form-group.col-md-10
+            label(for='exampleFormControlFile1') Enter Book URL
+            input#exampleFormControlFile1.form-control(name='book' type='text' required='')
+
+        button.btn.btn-primary(type='submit') Upload
+    //
+      <label for="inputAddress">Select Book pdf</label>
+      <input type="file" class="form-control" id="bookpdf" placeholder="Select a Book" style="float: right;">
+// /#page-content-wrapper
+// /#wrapper
+// Bootstrap core JavaScript
+script(src='vendor/jquery/jquery.min.js')
+script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+// Menu Toggle Script
+script.
+  $("#menu-toggle").click(function(e) {
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
+  });
