@@ -1,9 +1,4 @@
-//- extends layout
 
-//- block content
-//-   h1=title
-//-   p Welcome to #{title}
-//------------------------------
 doctype html
 head
   title Bookido|CUI Lahore
@@ -119,22 +114,7 @@ head
 section.header
   .overlay
     .cont
-      // <img class="logo child  ml-4 pt-2" src="images/my1.png" height="90px"style="display:inline-block">
-      nav.navbar.navbar-default.navbar-expand-md
-        img.logo.child.mt-4.pt-2(src='images/my1.png' height='90px')
-        button.navbar-toggler.navbar-toggle(type='button' data-toggle='collapse' data-target='#navcontent' aria-controls='navcontent' aria-expanded='false' aria-label='Toggle navigation')
-          i.fa.fa-bars.fa-2x
-        // Collect the nav links, forms, and other content for toggling
-        #navcontent.collapse.navbar-collapse.justify-content-end
-          ul.nav.navbar-nav.nav-links
-            li.nav-item
-              a.nav-link(href='#') Home
-            li.nav-item
-              a.nav-link(href='/signin') Sign In
-            li.nav-item
-              a.nav-link(href='/signup') Sign Up
-            li.nav-item
-              a.nav-link(href='/adminlogin') Admin
+      include ./navbar
       .container.mycontainer.p-5.border
         .row
           h1.eyecatch.display-1 WE&apos;RE IN THE BUSINESS OF HELPING YOU

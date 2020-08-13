@@ -58,6 +58,7 @@ router.post("/signin", async function (req, res, next) {
     password: req.body.password,
   });
   if (!authorize_user) return res.send("USER NOT FOUND");
+  req.session.user = authorize_user;
   return res.redirect("welcome");
 });
 // After authorrization take user to welcome page

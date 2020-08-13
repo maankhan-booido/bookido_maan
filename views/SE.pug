@@ -1,110 +1,7 @@
-//- doctype html
-//- head
-//-   title Login Page
-//-   // favicon
-//-   link(rel='icon' href='images/PP.png' type='image/png' sizes='48 X 48')
-//-   // favicon
-//-   // font-awesome and others
-//-   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-//-   // font-awesome end
-//-   // google fonts
-//-   link(href='https://fonts.googleapis.com/css?family=Boogaloo' rel='stylesheet')
-//-   link(href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet')
-//-   link(href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet')
-//-   // google fonts
-//-   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
-//-   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
-//-   script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
-//-   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js')
-//-   // Bootstrap end
-//-   // Bootsrap 4 CDN
-//-   // <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-//-   // Fontawesome CDN for card
-//-   link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.3.1/css/all.css')
-//-   style.
-//-     .container{
-//-     margin-top: 5vw;
-//-     align-content: center;
-//-     }
 
-//-     .links{
-//-     color: #FFC34C;
-//-     }
-//-     .links a{
-//-     color:#FFC34C;
-//-     margin-left: 4px;
-//-     }
-//-     /*for navbar  */
-//-     .navbar-default {
-//-     background-color:transparent !important;
-//-     border-color:transparent;
-//-     background-image:none;
-//-     box-shadow:none;
-//-     }
-//-     .navbar-default {
-//-     font-size: 30px;
-//-     font-weight: bold;
-//-     color: #FFC34C;
-//-     border-bottom: 1px solid transparent;
-//-     }
-//-     .navbar-default .navbar-nav>li>a {
-//-     font-size:20px;
-//-     color:#FFC34C;
-//-     border-bottom: 1px solid transparent;
-//-     text-align: right;
-//-     /* padding: 25px; */
-//-     }
-//-     .navbar-default .navbar-nav>li:hover a{
-//-     color: #FFC34C;
-//-     border-bottom: 2px solid #FFC34C;
-//-     }
-//-     .navbar-toggle {
-//-     /* margin:10px 0;  */
-//-     background:#fff;
-//-     color:#FFC34C;
-//-     }
-//-     .child{
-//-     position: relative;
-//-     bottom: 2vw;
-//-     }
-//-     .navbar-nav > li{
-//-     padding-left:19px;
-//-     padding-right:15px;
-//-     }
-//- // <img class="logo child ml-4 pt-2" src="images/my1.png" height="90px" style="display:inline-block">
-//- nav.navbar.navbar-default.navbar-expand-md.justify-content-center
-//-   img.logo.child.mt-4.pt-2(src='images/my1.png' height='90px')
-//-   button.navbar-toggler.navbar-toggle(type='button' data-toggle='collapse' data-target='#navcontent' aria-controls='navcontent' aria-expanded='false' aria-label='Toggle navigation')
-//-     i.fa.fa-bars.fa-2x
-//-   // Collect the nav links, forms, and other content for toggling
-//-   #navcontent.collapse.navbar-collapse.justify-content-end
-//-     ul.nav.navbar-nav.nav-links
-//-       li.nav-item
-//-         a.nav-link(href='/') Home
-//-       li.nav-item
-//-         a.nav-link(href='/signin') Sign In
-//-       li.nav-item
-//-         a.nav-link(href='/signup') Sign Up
-//-       li.nav-item
-//-         a.nav-link(href='/admin') Admin
-//-       table.table.table-hover
-//-         thead
-//-           tr
-//-             th(scope='col') Book Name
-//-             th(scope='col') Author
-//-             th(scope='col') Department 
-//-             th(scope='col') Download                               
-//-         tbody
-//-             each newbook in books
-//-                 tr               
-//-                     td=newbook.bookname
-//-                     td=newbook.authorname
-//-                     td=newbook.depname
-//-                     td
-//-                         a.fa.fa-download(style='font-size:36px;color:#FFC34C' href=newbook.book) 
 doctype html
 head
-  title Bookido|CUI Lahore
+  title SE
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   // favicon
@@ -214,23 +111,7 @@ head
 section.header
   .overlay
     .cont
-      nav.navbar.navbar-default.navbar-expand-md
-        img.logo.child.mt-4.pt-2(src='images/my1.png' height='90px')
-        button.navbar-toggler.navbar-toggle(type='button' data-toggle='collapse' data-target='#navcontent' aria-controls='navcontent' aria-expanded='false' aria-label='Toggle navigation')
-          i.fa.fa-bars.fa-2x
-        // Collect the nav links, forms, and other content for toggling
-        #navcontent.collapse.navbar-collapse.justify-content-end
-          ul.nav.navbar-nav.nav-links
-            li.nav-item
-              a.nav-link(href='/') Home
-            li.nav-item
-              a.nav-link(href='#') About
-            li.nav-item
-              a.nav.link(class="nav-link" href="/logout") Logout
-            li.nav-item
-              a.nav-link(href='/adminlogin') Admin              
-
-    // cont
+      include ./navbar            
     .container.mycontainer.p-5.border
       .row
         h4.eyecatch.m-auto SE BOOKS

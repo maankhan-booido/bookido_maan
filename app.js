@@ -61,13 +61,22 @@ app.use(function (err, req, res, next) {
 });
 
 // Connecting Database
+// mongoose
+//   .connect(process.env.MONGODB_URI, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("Connected to MongoDB through app.js");
+//   })
+//   .catch((error) => console.log(error.message));
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect("mongodb://localhost/db_bookido", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log("Connected to MongoDB through app.js");
+    console.log("Connected to MongoDB");
   })
   .catch((error) => console.log(error.message));
 
