@@ -81,6 +81,4 @@ mongoose
   })
   .catch((error) => console.log(error.message));
 
-app.listen(PORT);
-
 module.exports = app;
