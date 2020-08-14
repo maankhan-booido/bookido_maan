@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 5000;
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -71,7 +72,7 @@ app.use(function (err, req, res, next) {
 //   })
 //   .catch((error) => console.log(error.message));
 mongoose
-  .connect("mongodb://localhost/db_bookido", {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -79,5 +80,7 @@ mongoose
     console.log("Connected to MongoDB");
   })
   .catch((error) => console.log(error.message));
+
+app.listen(PORT);
 
 module.exports = app;
